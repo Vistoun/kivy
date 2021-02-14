@@ -1,6 +1,6 @@
 from kivy.app import App
-from kivy.uix.screenmanager import Screen
-from kivy.uix.widget import Widget
+from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.lang import Builder
 
 class MenuWindow(Screen):
     pass
@@ -8,12 +8,15 @@ class MenuWindow(Screen):
 class IntroWindow(Screen):
     pass
 
-class StatisWindow(Screen):
+
+class WindowManager(ScreenManager):
     pass
+
+kv = Builder.load_file("my.kv")
 
 class MyApp(App):
     def build(self):
-        return StatisWindow()
+        return kv
 
 if __name__ == '__main__':
     MyApp().run()

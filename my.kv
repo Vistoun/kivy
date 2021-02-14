@@ -3,8 +3,12 @@
     background_normal: ''
     background_color: (65/255.0, 65/255.0, 65/255.0, 1.0)
 
+WindowManager:
+    IntroWindow:
+    MenuWindow:
+
 <IntroWindow>
-    
+    name: "intro"
     FloatLayout:
         size_hint: (None,None)
         size: root.width, root.height
@@ -37,9 +41,13 @@
     Button:
         text: 'Submit'
         pos_hint: {'x': 0.36, 'y': 0.1}
+        on_release: 
+            app.root.current = "menu"
+            root.manager.transition.direction = "left"
 
 
 <MenuWindow>
+    name: "menu"
     BoxLayout:
         orientation: "vertical"
         size: root.width, root.height
@@ -56,6 +64,9 @@
         Button:
             text: 'Zpět'
             pos_hint: {'x': 0.0, 'y': 0.0}
+            on_release: 
+                app.root.current = "intro"
+                root.manager.transition.direction = "right"
 
     FloatLayout:
         size: root.width, root.height
@@ -68,7 +79,4 @@
         size: (300, 100)
         color: (1, 1, 1, 1.0)
         bold: True
-
-<StatisWindow>
-
 
