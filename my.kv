@@ -3,32 +3,72 @@
     background_normal: ''
     background_color: (65/255.0, 65/255.0, 65/255.0, 1.0)
 
+<IntroWindow>
+    
+    FloatLayout:
+        size_hint: (None,None)
+        size: root.width, root.height
+
+    Label:
+        text: 'Název tady'
+        font_size: 50
+        pos_hint:{"x":0.33,"y":0.7}
+        size_hint: (None, None)
+        size: (300, 100)
+        color: (1, 1, 1, 1.0)
+        bold: True
+
+    GridLayout:
+        cols: 1
+        size_hint: (None,None)
+        size: 450, 100
+        pos: 70, 280
+        GridLayout:
+            cols: 2
+            spacing: 20
+            Label:
+                text: "Name:"
+            TextInput:
+                multinline:False
+            Label:
+                text: "Password:"
+            TextInput:
+                multiline: False
+    Button:
+        text: 'Submit'
+        pos_hint: {'x': 0.36, 'y': 0.1}
+
+
 <MenuWindow>
     BoxLayout:
         orientation: "vertical"
         size: root.width, root.height
-        spacing: 20
+        spacing: 20      
 
         Button:
             text: 'Statistika'
             pos_hint: {'x': 0.0, 'y': 0}
 
         Button:
-            text: 'Next'
+            text: 'Popup'
             pos_hint: {'x': 0.0, 'y': 0.0}    
 
         Button:
-            text: 'Quit'
+            text: 'Zpět'
             pos_hint: {'x': 0.0, 'y': 0.0}
+
     FloatLayout:
         size: root.width, root.height
 
     Label:
-        text: 'Název tady'
+        text: 'Jmeno hráče'
         font_size: 50
         pos_hint:{"x":0.33,"y":0.85}
         size_hint: (None, None)
         size: (300, 100)
         color: (1, 1, 1, 1.0)
         bold: True
-        
+
+<StatisWindow>
+
+
